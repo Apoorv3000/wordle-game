@@ -153,7 +153,7 @@ const checkrow = () => {
           }
         }
       })
-      .catch((err) => console.log(error));
+      .catch((error) => console.log(error));
 
     console.log("guess is:", guess, "word is", wordle);
   }

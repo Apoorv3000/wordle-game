@@ -29,7 +29,7 @@ app.get("/word", (req, res) => {
       res.json(response.data[0]);
     })
     .catch((error) => {
-      console.error(error);
+      console.error("error:",error.message);
     });
 });
 
