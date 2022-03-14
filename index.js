@@ -9,8 +9,6 @@ const app = express();
 
 app.use(cors());
 
-const PORT = 8000;
-
 app.get("/word", (req, res) => {
   const options = {
     method: "GET",
@@ -29,7 +27,7 @@ app.get("/word", (req, res) => {
       res.json(response.data[0]);
     })
     .catch((error) => {
-      console.error("error:",error.message);
+      console.error("error:", error.message);
     });
 });
 
@@ -58,4 +56,6 @@ app.get("/check", (req, res) => {
     });
 });
 
-app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`));
+app.listen(process.env.PORT || 5000, () =>
+  console.log(`Server is running on port: ${PORT}`)
+);
